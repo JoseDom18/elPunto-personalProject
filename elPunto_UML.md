@@ -57,6 +57,81 @@ Actualmente para manejar mi inventario, tampoco llevo un registro. Pero para res
 
 ## Modelado UML
 
+### Casos de uso
+
+#### UC 1
+Nombre: registro de producto.
+Actor: vendedor.
+Descripción: el vendedor puede agregar productos a la app con sus datos para llevar un registro.
+1. El vendedor selecciona inventario el sistema entra a la sección de inventario.
+2. El vendedor selecciona agregar producto.
+3. El sistema lanza los campos a recibir primero pide el nombre del producto.
+4. El sistema pide el precio del paquete.
+5. El sistema pide la cantidad del paquete.
+6. El sistema pide el precio unitario de venta por defecto.
+6. El sistema con estos datos crea en automático el precio unitario al mayoreo.
+8. Una vez dado todos los datos el sistema agrega el producto al inventario.
+Precondición: El producto no tiene que existir en el sistema.
+Postcondición: El producto queda registrado en el sistema.
+Escenario: El sistema pide todos los datos con éxito y el producto queda registrado.
+Escenario alternativo: El producto ya esta registrado y el sistema no crea el nuevo registro.
+
+#### UC 2
+Nombre: Aumentar inventario.
+Actor: vendedor.
+Descripción: El usuario aumenta el inventario de un producto. Los productos del mismo tipo tienen que ser agrupados en un solo tipo de producto no se tomara en cuenta sabores ni presentaciones, se generalizara por tipo de producto eg. sabritas, galletas, etc.
+1. El usuario selecciona inventario.
+2. El sistema arroja opciones
+Precondición:
+Postcondición:
+Escenario:
+Escenario alternativo:
+
+#### UC 3
+Nombre:
+Actor:
+Descripción:
+Precondición:
+Postcondición:
+Escenario:
+Escenario alternativo:
+
+#### UC 4
+Nombre:
+Actor:
+Descripción:
+Precondición:
+Postcondición:
+Escenario:
+Escenario alternativo:
+
+#### UC 5
+Nombre:
+Actor:
+Descripción:
+Precondición:
+Postcondición:
+Escenario:
+Escenario alternativo:
+
+#### UC 6
+Nombre:
+Actor:
+Descripción:
+Precondición:
+Postcondición:
+Escenario:
+Escenario alternativo:
+
+#### UC 7
+Nombre:
+Actor:
+Descripción:
+Precondición:
+Postcondición:
+Escenario:
+Escenario alternativo:
+
 Teniendo en cuenta lo anterior los casos de uso que se me ocurren a mi software en estos momentos son:
 
 - Calcular precio mayoreo unitario
