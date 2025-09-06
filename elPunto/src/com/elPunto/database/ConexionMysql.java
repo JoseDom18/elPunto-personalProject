@@ -11,7 +11,7 @@ public class ConexionMysql {
 
     public static void conexiondb (){
         try (
-                Connection miconexion = DriverManager.getConnection(url, user, password);
+                Connection miconexion = DriverManager.getConnection(url, user, password)
         ){
             Class.forName("com.mysql.cj.jdbc.Driver");
             System.out.println("Conexión exitosa a la base de datos de elPunto");
