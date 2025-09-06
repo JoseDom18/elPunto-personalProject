@@ -164,3 +164,34 @@ Teniendo en cuenta lo anterior los casos de uso que se me ocurren a mi software 
 
 ### Diagrama de casos de uso
 
+## Pantallas
+- Se inicia el programa y muestra opciones
+  1.- Venta
+  2.- Agregar producto
+  3.- Ganancias
+  3.- Consulta de inventario
+- Venta
+  Selecciona un producto
+  Cantidad
+  Salir
+  Total de venta
+  Dinero recibido
+  Cambio
+  Finalizar
+- Agregar producto
+  Ingresa nombre
+  Ingresa precio de paquete
+  Ingresa cantidad de paquete
+  Muestra precio sugerido
+  Ingresa precio de venta
+- Ganancias
+  Ganancia de hoy
+  Ganancia de los últimos 7 Dias
+  Ganancias de los últimos 30 Dias
+- Consulta de inventario
+  Elige un producto
+  Datos del producto
+  Preguntar si modificar el producto
+  Preguntar si cambiar nombre
+  Preguntar si cambiar precio
+  Preguntar si inventario al producto
