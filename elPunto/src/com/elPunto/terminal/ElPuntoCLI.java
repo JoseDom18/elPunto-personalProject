@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class ElPuntoCLI {
 
     // pantalla inicial
-    public static void pantallaInicial (Scanner in) {
+    public static void pantallaInicial(Scanner in) {
 
         System.out.println("Bienvenido al punto");
         System.out.println();
@@ -25,25 +25,28 @@ public class ElPuntoCLI {
             in.nextLine();
             System.out.println();
 
-        } while (seleccion != 0);
 
-        switch (seleccion) {
-            case 1:
-                ElPuntoCLI.pantallaVenta(in);
-                break;
-            case 2:
-                ElPuntoCLI.pantallaAgregarProducto(in);
-                break;
-            case 3:
-                ElPuntoCLI.pantallaGanancias(in);
-                break;
-            case 4:
-                ElPuntoCLI.pantallaConsultaInventario(in);
-                break;
-            default:
-                System.out.println("Selecciona una opción correcta");
-                System.out.println();
-        }
+            switch (seleccion) {
+                case 1:
+                    ElPuntoCLI.pantallaVenta(in);
+                    break;
+                case 2:
+                    ElPuntoCLI.pantallaAgregarProducto(in);
+                    break;
+                case 3:
+                    ElPuntoCLI.pantallaGanancias(in);
+                    break;
+                case 4:
+                    ElPuntoCLI.pantallaConsultaInventario(in);
+                    break;
+                case 0:
+                    System.out.println("Hasta luego mingood. :)");
+                    break;
+                default:
+                    System.out.println("Selecciona una opción correcta");
+                    System.out.println();
+            }
+        } while (seleccion != 0);
     }
 
     // pantalla de venta
@@ -68,7 +71,6 @@ public class ElPuntoCLI {
 
         System.out.print("Nombre del producto: ");
         nombreProducto = in.nextLine();
-        in.nextLine();
         System.out.print("Precio de paquete: ");
         precioProducto = in.nextDouble();
         in.nextLine();
@@ -84,7 +86,7 @@ public class ElPuntoCLI {
         // confirmacion o volver a empezar
         System.out.print("Confirmar (y/n): ");
         confirmacion = in.nextLine();
-        if (confirmacion.equalsIgnoreCase("y")){
+        if (confirmacion.equalsIgnoreCase("y")) {
 
         } else if (confirmacion.equalsIgnoreCase("n")) {
 
@@ -93,7 +95,9 @@ public class ElPuntoCLI {
         }
 
 
+        System.out.println();
         System.out.println("Producto agregado con exito.");
+        System.out.println();
 
     }
 
