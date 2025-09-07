@@ -169,7 +169,7 @@ Teniendo en cuenta lo anterior los casos de uso que se me ocurren a mi software 
   1.- Venta
   2.- Agregar producto
   3.- Ganancias
-  3.- Consulta de inventario
+  4.- Consulta de inventario
 - Venta
   Selecciona un producto
   Cantidad
