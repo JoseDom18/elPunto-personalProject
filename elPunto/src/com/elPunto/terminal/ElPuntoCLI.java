@@ -13,7 +13,7 @@ public class ElPuntoCLI {
         int seleccion = 0;
 
         do {
-            System.out.println("Selecciona una opción:");
+            System.out.println("Selecciona una opción(0 para terminar):");
             System.out.println();
             System.out.println("1.- Venta");
             System.out.println("2.- Agregar Producto");
@@ -51,18 +51,27 @@ public class ElPuntoCLI {
 
     // pantalla de venta
     public static void pantallaVenta(Scanner in) {
+        System.out.println();
+        System.out.println("1.- Venta");
+        System.out.println();
+
+        // mostrar lista de productos
+        System.out.println("Selecciona un producto: ");
+        // funcion mostrar lista
+
 
     }
 
     // pantalla de agregar producto
     public static void pantallaAgregarProducto(Scanner in) {
-
+        System.out.println();
         System.out.println("2.- Agregar producto");
         System.out.println();
 
         String nombreProducto;
         double precioProducto;
         int cantidad;
+        double precioUnitario;
         double precioSugerido;
         double precioVenta;
         String confirmacion;
@@ -77,26 +86,32 @@ public class ElPuntoCLI {
         System.out.print("Cantidad del paquete: ");
         cantidad = in.nextInt();
         in.nextLine();
-        precioSugerido = precioProducto / cantidad;
+        precioUnitario = precioProducto / cantidad;
+        System.out.printf("Precio por unidad: %.2f%n", precioUnitario);
+        precioSugerido = precioUnitario / (1 - .30);
         System.out.printf("Precio sugerido: %.2f%n", precioSugerido);
         System.out.print("Precio de venta: ");
         precioVenta = in.nextDouble();
         in.nextLine();
+        System.out.println();
 
         // confirmacion o volver a empezar
         System.out.print("Confirmar (y/n): ");
         confirmacion = in.nextLine();
         if (confirmacion.equalsIgnoreCase("y")) {
 
+            System.out.println("Producto agregado con exito.");
+
         } else if (confirmacion.equalsIgnoreCase("n")) {
 
+            System.out.println("Operación cancelada.");
         } else {
             System.out.println("Elija una opción correcta.");
         }
 
 
-        System.out.println();
-        System.out.println("Producto agregado con exito.");
+
+
         System.out.println();
 
     }
