@@ -2,6 +2,8 @@ package com.elPunto.terminal;
 
 import java.util.Scanner;
 
+import com.elPunto.database.ConexionMysql;
+
 public class ElPuntoCLI {
 
     // pantalla inicial
@@ -99,6 +101,8 @@ public class ElPuntoCLI {
         System.out.print("Confirmar (y/n): ");
         confirmacion = in.nextLine();
         if (confirmacion.equalsIgnoreCase("y")) {
+        	
+        	ConexionMysql.insertarProducto(nombreProducto, precioProducto, cantidad, precioUnitario, precioSugerido, precioVenta);
 
             System.out.println("Producto agregado con exito.");
 
