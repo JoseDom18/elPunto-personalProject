@@ -102,7 +102,7 @@ public class ElPuntoCLI {
         confirmacion = in.nextLine();
         if (confirmacion.equalsIgnoreCase("y")) {
         	
-        	ConexionMysql.insertarProducto(nombreProducto, precioProducto, cantidad, precioUnitario, precioSugerido, precioVenta);
+        	ConexionMysql.insertarProducto (nombreProducto, precioProducto, cantidad, precioUnitario, precioSugerido, precioVenta);
 
             System.out.println("Producto agregado con exito.");
 
