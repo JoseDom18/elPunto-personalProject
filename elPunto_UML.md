@@ -190,8 +190,9 @@ Teniendo en cuenta lo anterior los casos de uso que se me ocurren a mi software 
   Ganancias de los últimos 30 Dias
 - Consulta de inventario
   Elige un producto
-  Datos del producto
-  Preguntar si modificar el producto
-  Preguntar si cambiar nombre
-  Preguntar si cambiar precio
-  Preguntar si inventario al producto
+    Datos del producto
+    modificar el producto
+    eliminar producto
+    cambiar nombre
+    cambiar precio
+    inventario al producto
