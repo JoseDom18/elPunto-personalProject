@@ -3,6 +3,7 @@ package com.elPunto.database;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class ConexionMysql {
 
@@ -11,6 +12,10 @@ public class ConexionMysql {
     static String password = "";
 
     public static void insertarProducto (String nombre, double precio, int cantidad, double precioUnitario, double precioSugerido, double precioVenta){
+    	if (evitarDuplicado(nombre)) {
+    		System.out.printf("El producto %s no se inserto por que ya existe.%n", nombre);
+    		return;
+    	}
         String sql = "INSERT INTO productos (nombre, unidades_x_paquete, precio_paquete, precio_unitario, precio_sugerido, precio_venta) values (?,?,?,?,?,?)";
         try (
                 Connection miconexion = DriverManager.getConnection(url, user, password);
@@ -34,5 +39,27 @@ public class ConexionMysql {
             System.out.println("fallo la conexión a la base de datos del elPunto");
             e.printStackTrace();
         }
+    }
+    
+    public static boolean evitarDuplicado(String nombre) {
+    	String sql = "Select 2 from productos where nombre=?";
+    	try(
+    			Connection con = DriverManager.getConnection(url, user, password);
+    			PreparedStatement pstm = con.prepareStatement(sql);
+    			){
+    		
+    		Class.forName("com.mysql.cj.jdbc.Driver");
+    		
+    		pstm.setString(1, nombre);
+    		
+    		try(ResultSet rs = pstm.executeQuery()){
+    		return rs.next();
+    		}
+    		
+    		
+    	} catch (Exception e){
+    		System.out.println("Error de conexión al comprobar.");
+    	}
+    	return false;
     }
 }
