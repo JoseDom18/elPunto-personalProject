@@ -16,7 +16,7 @@ public class ConexionMysql {
     		System.out.printf("El producto %s no se inserto por que ya existe.%n", nombre);
     		return;
     	}
-        String sql = "INSERT INTO productos (nombre, unidades_x_paquete, precio_paquete, precio_unitario, precio_sugerido, precio_venta) values (?,?,?,?,?,?)";
+        String sql = "INSERT INTO productos (nombre, unidades_x_paquete, precio_paquete, precio_unitario, precio_sugerido, precio_venta, stock) values (?,?,?,?,?,?,?)";
         try (
                 Connection miconexion = DriverManager.getConnection(url, user, password);
                 PreparedStatement pstm = miconexion.prepareStatement(sql);
@@ -31,6 +31,7 @@ public class ConexionMysql {
             pstm.setDouble(4, precioUnitario);
             pstm.setDouble(5, precioSugerido);
             pstm.setDouble(6, precioVenta);
+            pstm.setInt(7, cantidad);
 
             int filasAfectadas = pstm.executeUpdate();
             System.out.printf("Se afectaron %d filas.%n", filasAfectadas);

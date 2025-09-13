@@ -8,6 +8,7 @@ public class Productos {
 	private double precio_unitario;
 	private double precio_sugerido;
 	private double precio_venta;
+	private int stock;
 	
 	public Productos (String nombre, int unidades_x_paquete, double precio_paquete, double precio_unitario, double precio_sugerido, double precio_venta) {
 		this.nombre = nombre;
