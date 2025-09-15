@@ -26,7 +26,7 @@ public class Productos {
 	
 	public static void mostrarProductos(ArrayList<Productos> productos) {
 		for(Productos p : productos) {
-			System.out.printf("%d", p.getNombre());
+			System.out.printf("%s%n", p.getNombre());
 		}
 	}
 
