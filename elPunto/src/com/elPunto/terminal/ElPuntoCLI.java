@@ -1,5 +1,6 @@
 package com.elPunto.terminal;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import com.elPunto.clases.Productos;
@@ -16,6 +17,7 @@ public class ElPuntoCLI {
         int seleccion = 0;
 
         do {
+        	System.out.println("");
             System.out.println("Selecciona una opción(0 para terminar):");
             System.out.println();
             System.out.println("1.- Venta");
@@ -54,14 +56,57 @@ public class ElPuntoCLI {
 
     // pantalla de venta
     public static void pantallaVenta(Scanner in) {
+    	String eleccion = "y";
+    	ArrayList<Productos> productos = ConexionMysql.listaProductos();
+    	double total_venta = 0;
+    	double total_mayoreo = 0;
+    	
+    	while (eleccion.equalsIgnoreCase("y")) {
+    		
         System.out.println();
         System.out.println("1.- Venta");
         System.out.println();
 
         // mostrar lista de productos
-        System.out.println("Selecciona un producto: ");
+        System.out.println("<<<Lista de productos>>>");
         Productos.mostrarProductos(ConexionMysql.listaProductos());
-        // funcion mostrar lista
+        
+        // seleccionar producto
+        System.out.print("Seleccione un producto (# de producto): ");
+        int opcion = in.nextInt();
+        in.nextLine();
+        System.out.println(productos.get(opcion - 1).getNombre());
+        System.out.printf("Precio: %.2f%n", productos.get(opcion - 1).getPrecio_venta());
+        System.out.print("Cantidad: ");
+        int cant = in.nextInt();
+        in.nextLine();
+        while (cant > productos.get(opcion - 1).getStock()) {
+        	System.out.println("No hay stock de este producto.");
+        	System.out.printf("Stock: %d%n", productos.get(opcion - 1).getStock());
+        	System.out.print("Cantidad: ");
+        	cant = in.nextInt();
+        	in.nextLine();
+        }
+        System.out.printf("Subtotal: %.2f%n", productos.get(opcion - 1).getPrecio_venta() * cant);
+        System.out.print("Continuar: (y/n): ");
+        eleccion = in.nextLine();
+        System.out.println("");
+        total_venta += productos.get(opcion - 1).getPrecio_venta() * cant;
+        total_mayoreo += productos.get(opcion - 1).getPrecio_unitario() * cant;
+    	
+        // seleccionar producto
+        
+    	}
+
+    	double ganancia = total_venta - total_mayoreo;
+    	System.out.printf("Total: %.2f%n", total_venta);
+    	System.out.printf("Ganancia: %.2f%n", ganancia);
+    	System.out.print("Paga con: ");
+    	double pago = in.nextDouble();
+    	in.nextLine();
+    	System.out.printf("Cambio: %.2f%n", pago - total_venta);
+    	
+    	
 
 
     }

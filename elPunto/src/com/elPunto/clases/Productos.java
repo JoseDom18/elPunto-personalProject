@@ -25,9 +25,11 @@ public class Productos {
 	}
 	
 	public static void mostrarProductos(ArrayList<Productos> productos) {
-		for(Productos p : productos) {
-			System.out.printf("%s%n", p.getNombre());
+		for(int i = 0; i < productos.size(); i++) {
+			Productos p = productos.get(i);
+			System.out.printf("%d.- %s%n", i + 1, p.getNombre());
 		}
+		System.out.println("");
 	}
 
 	public int getStock() {
