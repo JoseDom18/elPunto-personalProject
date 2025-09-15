@@ -1,5 +1,7 @@
 package com.elPunto.clases;
 
+import java.util.ArrayList;
+
 public class Productos {
 
 	private String nombre;
@@ -10,7 +12,7 @@ public class Productos {
 	private double precio_venta;
 	private int stock;
 	
-	public Productos (String nombre, int unidades_x_paquete, double precio_paquete, double precio_unitario, double precio_sugerido, double precio_venta) {
+	public Productos (String nombre, int unidades_x_paquete, double precio_paquete, double precio_unitario, double precio_sugerido, double precio_venta, int stock) {
 		this.nombre = nombre;
 		if (unidades_x_paquete < 0 || precio_paquete < 0 || precio_unitario < 0 || precio_sugerido < 0 || precio_venta < 0) throw new IllegalArgumentException("Las cantidades deben ser positivas");
 		this.unidades_x_paquete = unidades_x_paquete;
@@ -18,7 +20,22 @@ public class Productos {
 		this.precio_unitario = precio_unitario;
 		this.precio_sugerido = precio_sugerido;
 		this.precio_venta = precio_venta;
+		this.stock = stock;
 		
+	}
+	
+	public static void mostrarProductos(ArrayList<Productos> productos) {
+		for(Productos p : productos) {
+			System.out.printf("%d", p.getNombre());
+		}
+	}
+
+	public int getStock() {
+		return stock;
+	}
+
+	public void setStock(int stock) {
+		this.stock = stock;
 	}
 
 	public String getNombre() {

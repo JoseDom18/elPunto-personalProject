@@ -2,6 +2,7 @@ package com.elPunto.terminal;
 
 import java.util.Scanner;
 
+import com.elPunto.clases.Productos;
 import com.elPunto.database.ConexionMysql;
 
 public class ElPuntoCLI {
@@ -59,6 +60,7 @@ public class ElPuntoCLI {
 
         // mostrar lista de productos
         System.out.println("Selecciona un producto: ");
+        Productos.mostrarProductos(ConexionMysql.listaProductos());
         // funcion mostrar lista
 
 
