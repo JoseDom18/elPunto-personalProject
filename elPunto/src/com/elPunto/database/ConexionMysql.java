@@ -93,4 +93,17 @@ public class ConexionMysql {
 
 		return productos;
 	}
+	
+	public static void insertarVenta() {
+		
+	}
+	
+	public static void descontarStock() {
+		
+	}
+	
+	public static void aumentarStock() {
+		
+	}
+	
 }

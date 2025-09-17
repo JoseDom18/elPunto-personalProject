@@ -75,6 +75,7 @@ public class ElPuntoCLI {
         System.out.print("Seleccione un producto (# de producto): ");
         int opcion = in.nextInt();
         in.nextLine();
+        System.out.println("");
         System.out.println(productos.get(opcion - 1).getNombre());
         System.out.printf("Precio: %.2f%n", productos.get(opcion - 1).getPrecio_venta());
         System.out.print("Cantidad: ");
