@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Productos {
 
+	private int id;
 	private String nombre;
 	private int unidades_x_paquete;
 	private double precio_paquete;
@@ -12,7 +13,8 @@ public class Productos {
 	private double precio_venta;
 	private int stock;
 	
-	public Productos (String nombre, int unidades_x_paquete, double precio_paquete, double precio_unitario, double precio_sugerido, double precio_venta, int stock) {
+	public Productos (int id, String nombre, int unidades_x_paquete, double precio_paquete, double precio_unitario, double precio_sugerido, double precio_venta, int stock) {
+		this.id = id;
 		this.nombre = nombre;
 		if (unidades_x_paquete < 0 || precio_paquete < 0 || precio_unitario < 0 || precio_sugerido < 0 || precio_venta < 0) throw new IllegalArgumentException("Las cantidades deben ser positivas");
 		this.unidades_x_paquete = unidades_x_paquete;
@@ -24,6 +26,10 @@ public class Productos {
 		
 	}
 	
+	public int getId() {
+		return id;
+	}
+
 	public static void mostrarProductos(ArrayList<Productos> productos) {
 		for(int i = 0; i < productos.size(); i++) {
 			Productos p = productos.get(i);
