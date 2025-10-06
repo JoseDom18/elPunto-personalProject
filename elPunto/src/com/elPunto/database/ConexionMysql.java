@@ -151,7 +151,7 @@ public class ConexionMysql {
 			pstm.setInt(3, cantidad);
 
 			int filas = pstm.executeUpdate();
-			// System.out.printf("Inserción exitosa se afectaron %d filas%n", filas);
+			 System.out.printf("Inserción exitosa se afectaron %d filas%n", filas);
 			// System.out.println("");
 
 		} catch (Exception e) {
@@ -169,7 +169,7 @@ public class ConexionMysql {
 			pstm.setInt(2, id);
 
 			int filas = pstm.executeUpdate();
-			// System.out.printf("Inserción exitosa se afectaron %d filas%n", filas);
+			 System.out.printf("Inserción exitosa se afectaron %d filas%n", filas);
 
 		} catch (Exception e) {
 			System.out.println("Error de conexión al descontar Stock.");
